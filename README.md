@@ -7,12 +7,9 @@ transmutation map to the Kumaraswamy baseline. The transformation adds
 other generalized families.
 
 This code accompanies my undergraduate thesis in Statistics at the Federal
-University of Technology, Owerri (supervisor: Dr. Kizito E. Anyiam) and the
-manuscript that grew out of it:
-
-> Anyiam, K. E., Daniels, E. M., Iwu, H. C., & Nwafor, G. O. *MG Kumaraswamy
-> Distribution for Enhanced Data Modeling and Application.* Manuscript under
-> review.
+University of Technology, Owerri (supervisor: Dr. Kizito E. Anyiam). A journal
+manuscript based on the thesis, with Dr. Anyiam and colleagues, is in
+preparation.
 
 ## The distribution
 
@@ -46,7 +43,7 @@ R/
   competing-distributions.R Kumaraswamy, Inverted Kumaraswamy (IKw),
                             Generalized IKw, Marshall–Olkin Extended IKw
   01-plots.R                density, CDF, survival and hazard shape plots
-  02-simulation.R           Monte Carlo study of the MLEs (Table 2)
+  02-simulation.R           Monte Carlo study of the MLEs
   03-application.R          fits to two real datasets vs competing models
 output/                     generated tables (CSV)
 figures/                    generated plots (PNG)
@@ -77,22 +74,22 @@ source("R/03-application.R")
 
 Only base R (`stats`, `graphics`, `grDevices`) is required. Tested with R 4.3.3.
 
-## Reproducing the manuscript
+## Results
 
-Running the scripts reproduces the manuscript's results as follows.
+Running the scripts gives the following key results.
 
-| Result | Manuscript | This code |
-|---|---|---|
-| MGKw MLE, COVID-19 France (Table 5) | a = 1.3488 (0.1323), b = 16.5923 (5.3099) | a = 1.3488 (0.1323), b = 16.5924 (5.3100) |
-| MGKw AIC, COVID-19 France | −141.290 | −141.290 |
-| MGKw CVM / AD / KS, France (Table 6) | 0.0584 / 0.4686 / 0.0981 | 0.0584 / 0.4686 / 0.0981 |
-| MGKw MLE, P3 algorithm (Table 9) | a = 0.2949, b = 0.9572 | a = 0.2950, b = 0.9572 |
-| MGKw AIC, P3 algorithm | −13.0359 | −13.0359 |
-| Simulation averages, n = 1000 (Table 2) | a = 1.0030, b = 0.7713 | a = 1.0043, b = 0.7721 |
+| Result | Value |
+|---|---|
+| MGKw MLE, COVID-19 France | a = 1.3488 (SE 0.1323), b = 16.5924 (SE 5.3100) |
+| MGKw log-likelihood and AIC, COVID-19 France | 72.645 and −141.290 |
+| MGKw goodness of fit, COVID-19 France (W\*, A\*, KS) | 0.0584, 0.4686, 0.0981 (p = 0.71) |
+| MGKw MLE, P3 capacity factors | a = 0.2950, b = 0.9572 |
+| MGKw AIC, P3 capacity factors | −13.036 |
+| Simulation averages at n = 1000 (true a = 1.001, b = 0.77) | a = 1.0043, b = 0.7721 |
 
-The log-likelihoods and AIC values of the IKw, MOEIKw and Kw fits also
-reproduce for both datasets. The manuscript is being revised, and this
-repository will be updated to match the final published version.
+On both datasets MGKw has the lowest AIC of the models compared: Kumaraswamy,
+Inverted Kumaraswamy, Generalized Inverted Kumaraswamy and Marshall–Olkin
+Extended Inverted Kumaraswamy.
 
 Implementation notes:
 
