@@ -24,7 +24,7 @@ $$F(x) = \exp\left(-\frac{(1-x^a)^b}{1-(1-x^a)^b}\right)$$
 
 **PDF**
 
-$$f(x) = \frac{ab\,x^{a-1}(1-x^a)^{b-1}}{\left[1-(1-x^a)^b\right]^2}\exp\left(-\frac{(1-x^a)^b}{1-(1-x^a)^b}\right)$$
+$$f(x) = \frac{ab x^{a-1}(1-x^a)^{b-1}}{\left[1-(1-x^a)^b\right]^2}\exp\left(-\frac{(1-x^a)^b}{1-(1-x^a)^b}\right)$$
 
 **Quantile function**
 
